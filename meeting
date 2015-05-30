@@ -1,0 +1,31 @@
+// meetup1
+package main
+
+import (
+	"fmt"
+)
+
+type People interface {
+	SayHello()
+	GetDetails()
+}
+type Person struct {
+	name        string
+	age         int
+	city, phone string
+}
+
+func (p Person) SayHello() {
+	fmt.Printf("hello i am %s from %s", p.name, p.city)
+
+}
+func (p Person) GetDetails() {
+	fmt.Printf("[name:%s age:%s city:%s phone:%s]", p.name, p.age, p.city, p.phone)
+}
+
+func main() {
+	fmt.Println("Hello World!")
+	janardhan := Person("janardhan", 32, "Tirupathi", "8801010512")
+	janardhan.GetDetails()
+	janardhan.SayHello()
+}
